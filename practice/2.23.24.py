@@ -1,3 +1,8 @@
+'''Objective
+The goal of this task is to write a Python function that modifies a given string by swapping every other vowel found within it.
+This operation should follow a specific pattern where the first vowel encountered is swapped with the second, the third with the fourth, and so on, throughout the entire string.
+'''
+
 def swap_vowels(s):
     pass
 
