@@ -48,36 +48,7 @@ def swap_vowels(s):
 # assert swap_vowels("Racecar") == "Recacar", "Test case failed: 'Racecar' -> 'Recacar'"
 
 # print("All test cases passed.")
-
-
-'''Binary Search'''
-def binary_search(arr, target):
-    low= 0
-    high = len(arr)-1
-    mid=int((low+((high-low))/2))
-    if len(arr)==1:
-        return 0
-    if len(arr)==0:
-        return -1
-    while low<high:
-        if arr[low] == target:
-            return low
-        elif arr[mid]==target:
-            return mid
-        elif arr[high]==target:
-            return high
-        if target < arr[mid] and target > arr[low]:
-            high= mid
-            mid=int((low+((high-low))/2))
-        elif target >arr[mid] and target <arr[high]:
-            low=mid
-            mid =int((low+((high-low))/2))
-        else:
-            return -1
-        
-    return 0
-        
-        
+   
 '''Binary Search'''
 def binary_search(arr, target):
     low= 0
