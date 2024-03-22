@@ -33,3 +33,18 @@ class Solution:
             else:
                 tot+=mappy[s[i]]
         return tot
+    
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        pref=''
+        sml_str=min(strs,key=len)
+        print(sml_str)
+        for i in range(len(sml_str)):
+            same = True
+            for j in range(len(strs)):
+                if strs[j][i]!= sml_str[i] :
+                    same = False
+                    return pref
+            if same != False:
+                    pref+=sml_str[i]
+        return pref
