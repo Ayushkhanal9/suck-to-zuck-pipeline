@@ -48,3 +48,23 @@ class Solution:
             if same != False:
                     pref+=sml_str[i]
         return pref
+    
+class Solution:
+    def isValid(self, s: str) -> bool: 
+        mappy= {')':'(', '}':'{', ']':'['}
+        stack=[]
+        if len(s)==1:
+            return False
+        for i in range(len(s)):
+            if s[i] in ['(','{','[']:
+                stack.append(s[i])
+            if s[i] in [')','}',']']:
+                if stack== []:
+                    return False
+                if mappy[s[i]]!=stack[-1]:
+                    return False
+                if mappy[s[i]]==stack[-1]:
+                    stack.pop(-1)  
+                 
+        return True if stack==[] else False               
+
