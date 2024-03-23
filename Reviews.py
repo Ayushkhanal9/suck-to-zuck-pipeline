@@ -66,5 +66,22 @@ class Solution:
                 if mappy[s[i]]==stack[-1]:
                     stack.pop(-1)  
                  
-        return True if stack==[] else False               
+        return True if stack==[] else False       
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack=[]
+        mappy= {')':'(', '}':'{', ']':'['}
+        if len(s)==1:
+            return False
+        for i in range(len(s)):
+            if s[i]in {"(", "{", "["}:
+                stack.append(s[i])
+            elif s[i] in {")", "}", "]"}:
+                if stack==[]:
+                    return False
+                if mappy[s[i]]!=stack[-1]:
+                    return False
+                else:
+                    stack.pop()
+        return not stack        
 
