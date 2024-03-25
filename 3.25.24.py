@@ -12,3 +12,6 @@ class Solution:
                 print(mappy)
                 return(nums[i])
         return max(mappy,key=mappy.get)
+class Solution:
+    def getConcatenation(self, nums: List[int]) -> List[int]:
+        return nums*2
