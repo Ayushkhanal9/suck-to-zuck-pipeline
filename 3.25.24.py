@@ -35,3 +35,16 @@ class Solution:
             else:
                 ans.append(biggest)
         return -1
+class Solution:
+    def isSubsequence(self, s: str, t: str) -> bool:
+        left=right=0
+        strs=''
+        if s is None:
+            return True
+        for right in range(len(t)):
+             if left>=len(s):
+                return True if strs==s else False
+             if s[left]==t[right]:
+                 left+=1
+                 strs+=t[right]
+        return True if strs==s else False
