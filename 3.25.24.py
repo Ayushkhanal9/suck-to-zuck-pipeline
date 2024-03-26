@@ -47,4 +47,17 @@ class Solution:
              if s[left]==t[right]:
                  left+=1
                  strs+=t[right]
-        return True if strs==s else False
+        return True if strs==s else Fals
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        value = 0
+        counter = 0
+        print(len(s))
+        for i in range(len(s)):
+            if s[i]==" ":
+                if counter >=1:
+                    value=counter
+                counter =0
+            else:
+                counter+=1
+        return counter if counter>0 else value
