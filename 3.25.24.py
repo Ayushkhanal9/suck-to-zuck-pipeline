@@ -111,3 +111,21 @@ class Solution:
         self.invertTree(root.right)
 
         return root
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        array=[]
+        curr=head
+        while curr is not None:
+            if curr not in array:
+                array.append(head)
+                curr=curr.next
+            print(array)
+            if curr in array:
+                return True
+        return False
