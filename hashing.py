@@ -17,3 +17,13 @@ class Solution:
             mappy[num] = i
         
         return [-1, -1]
+class Solution:
+    def arrangeCoins(self, n: int) -> int:
+        counter=n
+        steps =0
+        for i in range(1,n+1):
+            if counter-i<0:
+                return steps-1
+            counter = n - i
+            steps+=1 
+        return steps
