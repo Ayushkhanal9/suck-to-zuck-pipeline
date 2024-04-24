@@ -25,3 +25,28 @@ public class Solution {
         return true;
     }
 }
+public class Solution {
+    public string LongestCommonPrefix(string[] strs) {
+        if(strs.Length==1 ){
+            return strs[0];
+        }
+        string result= "";
+        int min_str=strs[0].Length;
+        for(int i=0; i<strs.Length;i++){
+            if(strs[i].Length<min_str){
+                min_str=strs[i].Length;
+            }
+        }
+        for(int i=0; i<min_str;i++){
+            char currentChar=strs[0][i];
+            for(int j=0; j<strs.Length-1;j++){
+                Console.WriteLine(strs[j][i]);
+                if (strs[j][i]!=strs[j+1][i]){
+                    return result; 
+                }  
+            // result+=strs[j][i];
+            }result+=currentChar;
+        }
+        return result;
+    }
+}
