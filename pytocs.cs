@@ -50,3 +50,22 @@ public class Solution {
         return result;
     }
 }
+
+public class Solution {
+    public int LengthOfLastWord(string s) {
+        int value = 0;
+        int counter = 0;
+        Console.WriteLine(s.Length);
+        for (int i = 0; i < s.Length; i++) {
+            if (s[i] == ' ') {
+                if (counter >= 1) {
+                    value = counter;
+                }
+                counter = 0;
+            } else {
+                counter += 1;
+            }
+        }
+        return counter > 0 ? counter : value;
+    }
+}
