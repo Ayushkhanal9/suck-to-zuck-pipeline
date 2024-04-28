@@ -89,3 +89,24 @@ public class Solution {
         return result;
     }
 }
+public class Solution {
+    public int Search(int[] nums, int target) {
+        int low=0;
+        int high= nums.Length-1;
+        int mid = (low+(high-low)/2);
+
+        while(low<=high){
+            if(nums[mid]==target){
+                return mid;}
+            if(target>= nums[low] && target<nums[mid]){
+                high= mid-1;
+                mid = (low+(high-low)/2);
+            }else if (target<=nums[high] && target>nums[mid]){
+                low = mid+1;
+                mid = (low+(high-low)/2);
+            } else{
+                return -1;
+            }
+        } return mid;
+    }
+}
