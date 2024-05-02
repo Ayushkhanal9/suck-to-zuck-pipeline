@@ -36,3 +36,11 @@ class Solution:
             if slow == fast:
                 return True
         return False
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        nums.sort()
+        maxNum=nums[len(nums)-1]
+        for i in range(maxNum):
+            if i!=nums[i]:
+                return i
+        return maxNum+1
