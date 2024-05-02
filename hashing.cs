@@ -12,3 +12,14 @@ public class Solution {
             }else{return false;}
     }
 }
+public class Solution {
+    public int MissingNumber(int[] nums) {
+        Array.Sort(nums); // Sort the array of integers
+        int maxNum=nums.Length;
+        for(int i=0;i<maxNum;i++){
+            if(i!=nums[i]){
+                return i;
+            }
+        }return maxNum;
+    }
+}
