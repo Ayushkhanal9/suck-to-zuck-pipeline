@@ -1,0 +1,17 @@
+class Solution {
+    public boolean checkIfPangram(String sentence) {
+        Set<Character> letters = new HashSet<>();
+        String lowerCase = sentence.toLowerCase();
+        for(char c: lowerCase.toCharArray()){
+            if(Character.isLetter(c)){
+                letters.add(c);
+            }
+        }
+        if (letters.size()>=26){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+}
