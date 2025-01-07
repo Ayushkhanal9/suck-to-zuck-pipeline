@@ -63,9 +63,26 @@ class Solution {
         int maxSum = sum;
         
         for (int i = k; i < nums.length; i++) {
-            sum = sum + nums[i] - nums[i-k];  // add new, remove old
+            sum = sum + nums[i] - nums[i-k];
             maxSum = Math.max(maxSum, sum);
         }
         return (double) maxSum / k;
     }
+}
+public int findLength(int[] nums, int k) {
+    int left = 0;
+    int curr = 0;
+    int ans = 0;
+
+    for (int right = 0; right < nums.length; right++) {
+        curr += nums[right];
+        while (curr > k) {
+            curr -= nums[left];
+            left++;
+        }
+
+        ans = Math.max(ans, right - left + 1);
+    }
+
+    return ans;
 }
