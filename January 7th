@@ -86,3 +86,22 @@ public int findLength(int[] nums, int k) {
 
     return ans;
 }
+
+class Solution {
+    public int numSubarrayProductLessThanK(int[] nums, int k) {
+        int total = 0;
+        int left = 0;
+        int curr = 1;
+        
+        for (int right = 0; right < nums.length; right++) {
+            curr *= nums[right];
+            while (curr >= k) {
+                curr /= nums[left];
+                left++;
+            }
+            total += right - left + 1;
+        }
+        
+        return total;
+    }
+}
