@@ -82,3 +82,17 @@ public class Solution extends GuessGame {
         return low;
     }
 }
+
+class Solution {
+    public int mostWordsFound(String[] sentences) {
+        int j= 0;
+        int mostWord=0;
+        for(String sentence:sentences){
+            int wordCount = sentence.split(" ").length;
+            if (wordCount>mostWord){
+                mostWord=wordCount;
+            }
+        }
+        return mostWord;
+    }
+}
