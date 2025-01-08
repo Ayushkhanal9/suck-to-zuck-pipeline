@@ -21,3 +21,23 @@ class Solution {
         return false;
     }
 }
+class Solution {
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        int left =0;
+        int right=1;
+        int sum=0;
+
+        while (left<right & right<nums.length){
+            if((nums[left]==nums[right])&& Math.abs(left-right)<=k){
+                return true;
+            }else if(right==nums.length-1){
+                left+=1;
+                right=left+1;
+            }else{
+                right+=1;
+            }
+        }return false;
+
+
+    }
+}
