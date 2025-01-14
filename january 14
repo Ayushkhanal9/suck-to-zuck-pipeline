@@ -23,3 +23,23 @@ class Solution {
         return dummy.next;
     }
 
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+
+        String prefixLong = strs[0]; 
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+
+        for (int i = 1; i < strs.length; i++) {
+            while (strs[i].indexOf(prefixLong) != 0) {
+                prefixLong = prefixLong.substring(0, prefixLong.length() - 1);
+                if (prefixLong.isEmpty()) {
+                    return "";
+                }
+            }
+        }
+        return prefixLong;
+    }
+}
+
