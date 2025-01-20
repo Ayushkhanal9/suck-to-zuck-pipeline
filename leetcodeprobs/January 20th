@@ -1,0 +1,20 @@
+class Solution {
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        int left =0;
+        int right = 1;
+        while(right<nums.length){
+            if ((nums[left]==nums[right])&& (Math.abs(left-right)<=k)){
+                return true;
+            }
+            else if(right== nums.length-1){
+                left++;
+                right=left+1;
+            }
+            else {
+                right++;
+            }
+        }
+        return false;
+
+    }
+}
