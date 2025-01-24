@@ -152,3 +152,21 @@ class Solution {
         }return str;
     }
 }
+
+class Solution {
+    public String mergeAlternately(String word1, String word2) {
+        int left =0, right =0;
+        String str ="";
+
+        while (left < word1.length() || right<word2.length()){
+            if(left<word1.length()){
+                str+=word1.charAt(left);
+                left++;
+            }
+            if(right< word2.length()){
+                str+=word2.charAt(right);
+                right++;
+            }
+        }return str;
+    }
+}
