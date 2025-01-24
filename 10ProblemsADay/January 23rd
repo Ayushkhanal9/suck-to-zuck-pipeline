@@ -129,3 +129,26 @@ class Solution {
         }return Math.max(maxLength,length);
     }
 }
+
+class Solution {
+    public String mergeAlternately(String word1, String word2) {
+        int left =0;
+        int right =0;
+        String str ="";
+
+        while (left < word1.length() || right<word2.length()){
+            if(left>word1.length()-1){
+                str+=word2.substring(right);
+                return str;
+            }else if(right>word2.length()-1){
+                str+=word1.substring(left);
+                return str;
+            }else{
+                str+=word1.charAt(left);
+                str+=word2.charAt(right);
+                left++;
+                right++;
+            }
+        }return str;
+    }
+}
