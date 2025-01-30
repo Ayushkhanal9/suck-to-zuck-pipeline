@@ -50,3 +50,20 @@ class Solution {   //no work
         }return arr;
     }
 }
+
+class Solution { //fixed O(n) 
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+        List<Integer> arr= new ArrayList<>();
+        HashMap<Integer, Integer> mappy = new HashMap<>();
+        int left = 1;
+        for (int i = 0; i<nums.length; i++){
+            mappy.putIfAbsent(nums[i],1);
+        }
+        for(int i=0; i<nums.length; i++){
+            if(!mappy.containsKey(left)){
+                arr.add(left);
+            }
+            left+=1;
+        }return arr;
+    }
+}
