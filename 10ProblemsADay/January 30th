@@ -163,3 +163,29 @@ class Solution {
          return sortSquared;
     }
 }
+class Solution {
+    public int[] sortedSquares(int[] nums) {
+        int[] sortSquared= new int[nums.length];
+        int left=0, right = nums.length-1;
+        int i=nums.length-1;
+        while(left<=right){
+            if(nums[left]<0){
+                if (nums[left]*nums[left] > nums[right] *nums[right]){
+                    sortSquared[i]=nums[left]*nums[left];
+                    left++;
+                    i--;
+                }
+                else{
+                    sortSquared[i]=nums[right]*nums[right];
+                    i--;
+                    right--;
+                }
+            }else{
+                    sortSquared[i]=nums[right]*nums[right];
+                    i--;
+                    right--;
+            }
+        }
+        return sortSquared;
+    }
+}
