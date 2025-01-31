@@ -196,3 +196,18 @@ class Solution {
         return wasToBe-sum;
 }
 }
+class Solution {
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+        HashMap<Integer, Integer> mappy = new HashMap<>();
+        List<Integer> output = new ArrayList<>();
+        for(int i =0; i<nums.length; i++){
+            mappy.putIfAbsent(nums[i],1);
+        }
+        for(int i= 1; i<nums.length+1;i++){
+            if(mappy.containsKey(i)==false){
+                output.add(i);
+            }
+        }
+        return output;
+    }
+}
