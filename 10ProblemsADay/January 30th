@@ -169,21 +169,16 @@ class Solution {
         int left=0, right = nums.length-1;
         int i=nums.length-1;
         while(left<=right){
-            if(nums[left]<0){
-                if (nums[left]*nums[left] > nums[right] *nums[right]){
-                    sortSquared[i]=nums[left]*nums[left];
-                    left++;
-                    i--;
-                }
-                else{
-                    sortSquared[i]=nums[right]*nums[right];
-                    i--;
-                    right--;
-                }
+            int leftSq=nums[left]* nums[left];
+            int rightSq= nums[right]*nums[right];
+            if(leftSq > rightSq){
+                sortSquared[i]=leftSq;
+                i--;
+                left++;
             }else{
-                    sortSquared[i]=nums[right]*nums[right];
-                    i--;
-                    right--;
+                sortSquared[i]=rightSq;
+                i--;
+                right--;
             }
         }
         return sortSquared;
