@@ -153,3 +153,13 @@ class Solution {
         return Math.max(profit,maxProfit);
     }
 }
+class Solution {
+    public int[] sortedSquares(int[] nums) {
+         int[] sortSquared= new int[nums.length];
+         for(int i =0; i<nums.length; i++){
+            sortSquared[i]=nums[i]*nums[i];
+         }
+         Arrays.sort(sortSquared);
+         return sortSquared;
+    }
+}
