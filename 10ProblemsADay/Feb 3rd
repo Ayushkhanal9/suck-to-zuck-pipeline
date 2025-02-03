@@ -28,3 +28,24 @@ class Solution {
         } return low;
     }
 }
+class Solution {
+   public String countAndSay(int n) {
+       if(n == 1) return "1";
+       
+       String before = countAndSay(n-1);
+       StringBuilder result = new StringBuilder();
+       int count = 1;
+       char currChar = before.charAt(0);
+       for(int i = 1; i < before.length(); i++) {
+           if(before.charAt(i) == currChar) {
+               count++;
+           } else {
+               result.append(count).append(currChar);
+               currChar = before.charAt(i);
+               count = 1;
+           }
+       }
+       result.append(count).append(currChar);
+       return result.toString();
+   }
+}
