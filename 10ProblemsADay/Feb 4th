@@ -10,3 +10,19 @@ class Solution {
         return -1; 
     }
 }
+class Solution {
+    public boolean isPalindrome(int x) {
+        if (x <0) return false;
+        String nums= String.valueOf(x);
+        int left =0;
+        int right = nums.length()-1;
+        while(left<right){
+            if(nums.charAt(left) != nums.charAt(right)){
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+}
