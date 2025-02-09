@@ -1,0 +1,12 @@
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        HashMap<Integer, Integer> distinctNums = new HashMap<>();
+        for(int i = 0; i<nums.length; i++){
+            if(distinctNums.containsKey(nums[i])){
+                return true;
+            }
+            distinctNums.putIfAbsent(nums[i],i);
+        }
+        return false;
+    }
+}
