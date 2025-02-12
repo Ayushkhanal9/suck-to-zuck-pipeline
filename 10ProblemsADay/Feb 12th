@@ -13,3 +13,19 @@ class Solution {
         }
         return count;
     }
+class Solution {
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+        HashMap<Integer,Integer> mappy = new HashMap<>();
+        List<Integer> arr = new ArrayList<>();
+
+        for (int i =0; i<nums.length; i++){
+            mappy.putIfAbsent(nums[i],i);
+        }
+        for(int j=1;j<=nums.length;j++){
+            if(!mappy.containsKey(j)){
+                arr.add(j);
+            }
+        }
+        return arr;
+    }
+}
