@@ -47,3 +47,28 @@ class Solution {
         return maxProfit;
     }
 }
+class Solution {
+    public int[] sortedSquares(int[] nums) {
+        int[] sortedSq= new int[nums.length];
+        int left=0, right = nums.length-1;
+        int i =nums.length-1;
+        if (nums.length ==1){
+            nums[0]=nums[0]*nums[0];
+            return nums;
+        }
+        while(i>=0){
+            int leftSq = nums[left]*nums[left];
+            int rightSq= nums[right]* nums [right];
+            if(leftSq>rightSq){
+                sortedSq[i]=leftSq;
+                left++;
+                i--;
+            }else{
+                sortedSq[i]= rightSq;
+                right--;
+                i--;
+            }
+        }
+        return sortedSq;
+    }
+}
