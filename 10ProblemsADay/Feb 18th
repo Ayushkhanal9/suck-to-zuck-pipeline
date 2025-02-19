@@ -1,4 +1,23 @@
 class Solution {
+    public int majorityElement(int[] nums) {
+        HashMap<Integer, Integer> mappy = new HashMap<>();
+        int highest = 0;
+        int majorityElement = nums[0]; 
+        for (int num : nums) {
+            mappy.put(num, mappy.getOrDefault(num, 0) + 1);
+
+            if (mappy.get(num) > highest) {
+                highest = mappy.get(num);
+                majorityElement = num;
+            }
+        }
+        return majorityElement;
+    }
+}
+
+
+
+class Solution {
     public List<Integer> intersection(int[][] nums) {
         Map<Integer, Integer> counts = new HashMap<>();
         int n = nums.length;
