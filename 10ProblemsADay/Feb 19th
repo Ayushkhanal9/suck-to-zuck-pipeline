@@ -54,3 +54,16 @@ class Solution {
         return (mappy.equals(mappy2));
     }
 }
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        s= s.chars().sorted().mapToObj(c->String.valueOf((char)c)).collect(Collectors.joining());
+        char[] tArray= t.toCharArray();
+        Arrays.sort(tArray);
+        t= new String(tArray);
+        System.out.println(s+ " " + t);
+        if(s.equals(t)){
+            return true;
+        }
+        return false;
+    }
+}
