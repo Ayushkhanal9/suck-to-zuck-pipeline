@@ -33,3 +33,24 @@ class Solution {
         return ans;
     }
 }
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        HashMap<Character,Integer> mappy = new HashMap<>();
+        HashMap<Character,Integer> mappy2 = new HashMap<>();
+        if(s.length()!=t.length()){
+            return false;
+        }
+        for(int i=0; i<s.length();i++){
+            mappy.putIfAbsent(s.charAt(i),1);
+            mappy2.putIfAbsent(t.charAt(i),1);
+            if(mappy.containsKey(s.charAt(i))){
+                mappy.put(s.charAt(i), mappy.get(s.charAt(i))+1);
+            }
+            if(mappy2.containsKey(t.charAt(i))){
+                mappy2.put(t.charAt(i),mappy2.get(t.charAt(i))+1);
+            }
+        }
+
+        return (mappy.equals(mappy2));
+    }
+}
