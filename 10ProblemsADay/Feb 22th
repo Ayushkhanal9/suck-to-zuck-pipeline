@@ -12,3 +12,22 @@ class Solution {
    }
 
 }
+class Solution {
+    public int majorityElement(int[] nums) {
+        HashMap<Integer, Integer> numCounter = new HashMap<>();
+        int highest=0;
+        int most=0;
+        for(int i =0; i<nums.length; i++){
+            if(numCounter.containsKey(nums[i])){
+                numCounter.put(nums[i],numCounter.get(nums[i])+1);
+            }else{
+                numCounter.put(nums[i],1);
+            }
+            if(numCounter.get(nums[i])>highest){
+                highest=numCounter.get(nums[i]);
+                most=nums[i];
+            }
+        }
+        return most;
+    }
+}
